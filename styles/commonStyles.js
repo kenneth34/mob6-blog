@@ -3,7 +3,13 @@ export const commonStyles = {
     backgroundColor: '#2069e0',
     borderRadius: 15,
     width: "50%",
-    alignItems: "center"
+    alignItems: "center"   
+  },
+  buton: {
+    backgroundColor: 'green',
+    borderRadius: 15,
+    width: "30%"
+    
   },
   buttonText: {
     fontWeight: '400',

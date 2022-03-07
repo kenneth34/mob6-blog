@@ -66,6 +66,11 @@ export default function AccountScreen({ navigation }) {
       }),
     ).start()
   }
+  
+  function stopAnimation() {
+    Animated.timing(picSize
+    ).stop();
+  }
 
   function deletePhoto() {
     dispatch(deletePicAction())
@@ -87,7 +92,7 @@ export default function AccountScreen({ navigation }) {
   return (
     <View style={[styles.container, { alignItems: "center" }]}>
       <Text style={[styles.title, styles.text, { margin: 30 }]}> Hello {username} !</Text>
-      <View style={{height: profilePicture == null ? 0 : 320, justifyContent: "center"}}>
+      <View style={{height: profilePicture == null ? 0 : 200, justifyContent: "center"}}>
         {profilePicture == null ? <View /> :
           <TouchableWithoutFeedback onPress={changePicSize}>
             <Animated.Image
@@ -109,9 +114,17 @@ export default function AccountScreen({ navigation }) {
           value={isDark}
           onChange={switchMode}/>
       </View>
+      
       <TouchableOpacity style={[styles.button]} onPress={signOut}>
         <Text style={styles.buttonText}>
           Sign Out
+        </Text>
+        
+        
+        </TouchableOpacity>
+        <TouchableOpacity style={[styles.buton]} onPress={stopAnimation}>
+        <Text style={styles.buttonText}>
+          Stop
         </Text>
         </TouchableOpacity>
     </View>
