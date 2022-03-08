@@ -59,11 +59,13 @@ export default function AccountScreen({ navigation }) {
 
   function changePicSize() {
     Animated.loop(
+      //Animated.sequence([
       Animated.timing(picSize, {
-        toValue: 1,
+        toValue: 2,
         duration: 2500,
         useNativeDriver: false
       }),
+    //])
     ).start()
   }
   
@@ -122,7 +124,7 @@ export default function AccountScreen({ navigation }) {
         
         
         </TouchableOpacity>
-        <TouchableOpacity style={[styles.buton]} onPress={stopAnimation}>
+        <TouchableOpacity style={{ marginTop: 5, backgroundColor: "green", }} onPress={stopAnimation}>
         <Text style={styles.buttonText}>
           Stop
         </Text>
